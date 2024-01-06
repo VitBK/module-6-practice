@@ -2,15 +2,10 @@ package org.practice;
 
 import java.util.Map;
 
-public class TemplateEngine {
+import static org.practice.TemplateConstants.TEMPLATE;
+import static org.practice.TemplateConstants.TEMPLATE_CHARS;
 
-    private static final String TEMPLATE = """
-            {#subject}
-            This is first line
-            {#line}
-            {#signature}
-            """;
-    private static final char[] TEMPLATE_CHARS = TEMPLATE.toCharArray();
+public class TemplateEngine {
 
     public String createMessage(Map<String, String> tagValues) {
         StringBuilder sb = new StringBuilder(TEMPLATE);
