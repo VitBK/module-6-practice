@@ -1,6 +1,7 @@
 package org.practice;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -16,6 +17,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 @ExtendWith(FileOutputExtension.class)
+@Tag("UnitTest")
 class ConsoleHandlerTest {
 
     private final ConsoleHandler consoleHandler = new ConsoleHandler();

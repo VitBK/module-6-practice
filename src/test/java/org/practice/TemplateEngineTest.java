@@ -1,10 +1,12 @@
 package org.practice;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
 
+@Tag("UnitTest")
 class TemplateEngineTest {
 
     private final TemplateEngine templateEngine = new TemplateEngine();
