@@ -16,7 +16,7 @@ public class ConsoleHandler implements InputPreparator {
                 buffer.add(s);
             }
         } catch (Exception e) {
-            throw new InputReaderException("There was an error during reading from console: " + e.getMessage());
+            throw new HandlerException("There was an error during reading from console: " + e.getMessage());
         }
         return buffer;
     }

@@ -1,6 +1,7 @@
 package org.practice;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -30,6 +31,25 @@ class FilesHandlerTest {
 
         //then
         Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    void should_writeToFile_when_filePathIsGiven() throws IOException {
+        //given
+        Path output = tempDir.resolve("output.txt");
+        String expected = "test";
+
+        //when
+        filesHandler.writeToFile(expected, output.toString());
+
+        //then
+        Assertions.assertEquals(expected, Files.readString(output));
+    }
+
+    @Test
+    void should_throwHandlerException_when_writingToFileFailed() {
+        //when
+        Assertions.assertThrows(HandlerException.class, () -> filesHandler.writeToFile("test", "/"));
     }
 
     private static Stream<Arguments> getInputFiles() {
