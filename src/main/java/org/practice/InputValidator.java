@@ -1,5 +1,7 @@
 package org.practice;
 
+import org.practice.exceptions.TagMissingException;
+
 import java.util.Map;
 
 public class InputValidator {

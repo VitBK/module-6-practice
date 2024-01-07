@@ -1,4 +1,4 @@
-package org.practice;
+package org.practice.exceptions;
 
 public class TagMissingException extends RuntimeException {
 

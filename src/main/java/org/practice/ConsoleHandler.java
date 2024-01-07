@@ -1,5 +1,7 @@
 package org.practice;
 
+import org.practice.exceptions.HandlerException;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -19,5 +21,9 @@ public class ConsoleHandler implements InputPreparator {
             throw new HandlerException("There was an error during reading from console: " + e.getMessage());
         }
         return buffer;
+    }
+
+    public void printToConsole(String message) {
+        System.out.println(message);
     }
 }
